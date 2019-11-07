@@ -8,19 +8,19 @@
   ],
   "scripts": {
     "clean": "rm -rf dist && rm -rf coverage",
-    "lint": "yarn lint:prettier && yarn lint:tslint",
+    "lint": "npm run lint:prettier && npm run lint:tslint",
     "lint:prettier": "prettier --check \"**/*.{js,ts,md}\"",
-    "lint:tslint": "yarn tslint -c tslint.json '{lib,test}/**/*.ts'",
+    "lint:tslint": "npm run tslint -c tslint.json '{lib,test}/**/*.ts'",
     "lint:fix": "prettier --write \"**/*.{js,ts,md}\"",
     "build": "tsc",
-    "pretest": "yarn build",
+    "pretest": "npm run build",
     "test": "jest --runInBand",
-    "precover": "yarn clean && yarn build",
+    "precover": "npm run clean && npm run build",
     "cover": "jest --runInBand --coverage",
-    "precoveralls": "yarn clean && yarn build",
+    "precoveralls": "npm run clean && npm run build",
     "coveralls": "jest --runInBand --coverage --coverageReporters=text-lcov | coveralls",
-    "postcoveralls": "yarn clean",
-    "prepare": "yarn clean && yarn build"
+    "postcoveralls": "npm run clean",
+    "prepare": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
